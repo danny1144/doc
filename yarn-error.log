@@ -1,0 +1,40 @@
+Arguments: 
+  D:\software\nodejs\node.exe C:\Users\Z00403VJ\scoop\apps\yarn\current\Yarn\bin\yarn.js add vscode-markdown-preview-enhanced --save
+
+PATH: 
+  C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;D:\software\xshell\;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32\mpirt;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Files\fortran\bin\ia32;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\software\nodejs\;D:\software\Git LFS;D:\software\Git\cmd;C:\Program Files\Java\jdk1.8.0_191\bin;D:\java\maven3\apache-maven-3.5.4\bin;D:\server\go\bin;C:\Program Files\Java\jdk1.8.0_191\jre\bin;D:\software\Git\bin;C:\Users\Z00403VJ\scoop\apps\yarn\current\Yarn\bin;C:\Users\Z00403VJ\scoop\apps\yarn\current\bin;C:\Users\Z00403VJ\scoop\apps\python\current\scripts;C:\Users\Z00403VJ\AppData\Local\Programs\Python\Launcher\;C:\Users\Z00403VJ\scoop\shims;C:\Users\Z00403VJ\AppData\Local\Microsoft\;D:\software\Minikube;C:\ProgramData\chocolatey\bin;D:\software\wget;D:\software\mysql8\bin;C:\Program Files\Calibre2\;C:\Program Files (x86)\Yarn\bin\;D:\server\gradle-5.4.1\bin;C:\Users\Z00403VJ\scoop\apps\ruby\current\gems\bin;C:\Users\Z00403VJ\scoop\apps\ruby\current\bin;C:\Users\Z00403VJ\scoop\apps\yarn\current\Yarn\bin;C:\Users\Z00403VJ\scoop\apps\yarn\current\bin;C:\Users\Z00403VJ\scoop\apps\python\current\scripts;C:\Users\Z00403VJ\AppData\Local\Programs\Python\Launcher\;C:\Users\Z00403VJ\scoop\shims;C:\Users\Z00403VJ\AppData\Local\Microsoft\WindowsApps;C:\Users\Z00403VJ\AppData\Roaming\npm;D:\software\Microsoft VS Code\bin;C:\Users\Z00403VJ\go\bin;C:\tools\Cmder;C:\Users\Z00403VJ\AppData\Local\Yarn\bin;
+
+Yarn version: 
+  1.13.0
+
+Node version: 
+  10.15.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND devops.siemens.com devops.siemens.com:443
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:57:26)
+
+npm manifest: 
+  {
+    "devDependencies": {
+      "vuepress": "^0.14.11"
+    },
+    "scripts": {
+      "dev": "vuepress dev docs",
+      "build": "vuepress build docs"
+    },
+    "dependencies": {
+      "element-ui": "2.7.2",
+      "leancloud-storage": "^3.13.2",
+      "valine": "^1.3.6"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
