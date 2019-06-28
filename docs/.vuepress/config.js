@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'Zhong XiaoPing',
+    title: '其实，我是一名程序员',
     //base: '/vueblog/',
     serviceWorker: true,
     head: [
