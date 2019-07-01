@@ -7,5 +7,6 @@ echo 'blog.flooor.top' >CNAME
 git init
 git add -A
 git commit -m 'deploy'
+git checkout  -b gh-pages
 # 推到你仓库的 master 分支
 git push -f https://github.com/danny1144/doc.git gh-pages
