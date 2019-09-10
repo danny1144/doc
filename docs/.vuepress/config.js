@@ -29,16 +29,13 @@ module.exports = {
         ],
         lastUpdated: 'Last Updated', 
       },
-      plugins: {
-        '@vssue/vuepress-plugin-vssue': {
-          // 设置 `platform` 而不是 `api`
-          platform: 'github',
-          locale: 'zh', // 语言设置
-          // 其他的 Vssue 配置
-          owner: 'danny1144', // 你的github账户名称
-          repo: 'doc', // 你的Github博客仓库 我填的是soyomo
-          clientId: 'b940d27776678cd5b625', // 你在github上面申请的clientId
-          clientSecret: '82e202e00a7abdc816b03fefdbaed324cd1b7e2b', // 在github上面申请的clientSecret
-        },
-      },
-  }
+  plugins: [
+    ['@vssue/vuepress-plugin-vssue', {
+      platform: 'github',
+      owner: 'meteorlxy',
+      repo: 'vssue-demo',
+      clientId: '083b98e0d6526ce0a4a5',
+      clientSecret: 'f41adb2b6ae9a79b09cb852e4b8fa58f325af487',
+    }],
+  ],
+}
