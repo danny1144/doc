@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ldap常用操作 | 其实，我是一名程序员</title>
+    <meta name="description" content="">
+    <link rel="icon" href="/img/logo.jpeg">
+    
+    <link rel="preload" href="/assets/css/0.styles.ec5334b5.css" as="style"><link rel="preload" href="/assets/js/app.fbf1b08b.js" as="script"><link rel="preload" href="/assets/js/8.6b440de9.js" as="script"><link rel="preload" href="/assets/js/34.04b2e52e.js" as="script"><link rel="prefetch" href="/assets/js/10.89f811b8.js"><link rel="prefetch" href="/assets/js/11.0e190245.js"><link rel="prefetch" href="/assets/js/12.13a8ea5f.js"><link rel="prefetch" href="/assets/js/13.8f8f40c0.js"><link rel="prefetch" href="/assets/js/14.e75033fb.js"><link rel="prefetch" href="/assets/js/15.205f722e.js"><link rel="prefetch" href="/assets/js/16.66673bf2.js"><link rel="prefetch" href="/assets/js/17.5435c650.js"><link rel="prefetch" href="/assets/js/18.71b2c1fb.js"><link rel="prefetch" href="/assets/js/19.5f8b3901.js"><link rel="prefetch" href="/assets/js/2.63f3f567.js"><link rel="prefetch" href="/assets/js/20.bb4d6477.js"><link rel="prefetch" href="/assets/js/21.d59072e9.js"><link rel="prefetch" href="/assets/js/22.4d0029c9.js"><link rel="prefetch" href="/assets/js/23.03a51856.js"><link rel="prefetch" href="/assets/js/24.351ac71c.js"><link rel="prefetch" href="/assets/js/25.fcd7cac4.js"><link rel="prefetch" href="/assets/js/26.b2613bc7.js"><link rel="prefetch" href="/assets/js/27.164921bf.js"><link rel="prefetch" href="/assets/js/28.0251e2b8.js"><link rel="prefetch" href="/assets/js/29.da86b351.js"><link rel="prefetch" href="/assets/js/3.67263ba4.js"><link rel="prefetch" href="/assets/js/30.deb53385.js"><link rel="prefetch" href="/assets/js/31.60246431.js"><link rel="prefetch" href="/assets/js/32.88b0ca03.js"><link rel="prefetch" href="/assets/js/33.49d346dd.js"><link rel="prefetch" href="/assets/js/35.a9c5bc55.js"><link rel="prefetch" href="/assets/js/36.7c2c67e1.js"><link rel="prefetch" href="/assets/js/37.ebb59915.js"><link rel="prefetch" href="/assets/js/38.8597b6ef.js"><link rel="prefetch" href="/assets/js/39.50923ae2.js"><link rel="prefetch" href="/assets/js/4.287bab32.js"><link rel="prefetch" href="/assets/js/40.483fa3c9.js"><link rel="prefetch" href="/assets/js/5.ce17c05f.js"><link rel="prefetch" href="/assets/js/6.6b7bba6e.js"><link rel="prefetch" href="/assets/js/7.02ebcd87.js"><link rel="prefetch" href="/assets/js/9.da60ceff.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ec5334b5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.jpeg" alt="其实，我是一名程序员" class="logo"> <span class="site-name can-hide">其实，我是一名程序员</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/timeLine/" class="nav-link">首页</a></div><div class="nav-item"><a href="/technology/" class="nav-link router-link-active">技术</a></div><div class="nav-item"><a href="/life/" class="nav-link">生活</a></div><div class="nav-item"><a href="/ponder/" class="nav-link">思考</a></div><div class="nav-item"><a href="/tags/" class="nav-link">标签库</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/massage/" class="nav-link">留言板</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">链接</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/a053df515092" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/danny1144" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/zxp110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav> <div style="margin-left:20px;margin-right:20px;">
+   音乐
+  <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input"><!----><span class="el-switch__core" style="width:40px;"></span><!----></div> <audio loop="loop"><source src="/assets/media/buyizuishiliangbuyi.82f2a68a.mp3" type="audio/mpeg"></audio></div></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/timeLine/" class="nav-link">首页</a></div><div class="nav-item"><a href="/technology/" class="nav-link router-link-active">技术</a></div><div class="nav-item"><a href="/life/" class="nav-link">生活</a></div><div class="nav-item"><a href="/ponder/" class="nav-link">思考</a></div><div class="nav-item"><a href="/tags/" class="nav-link">标签库</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/massage/" class="nav-link">留言板</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">链接</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/a053df515092" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/danny1144" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/zxp110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>ldap常用操作</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/technology/2019-09-22.html#ldap操作" class="sidebar-link">ldap操作</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/technology/2019-09-22.html#ldap常用属性" class="sidebar-link">LDAP常用属性</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/technology/2019-09-22.html#java联调" class="sidebar-link">java联调</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/technology/2019-09-22.html#目录授权" class="sidebar-link">目录授权</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/technology/2019-09-22.html#参考文章" class="sidebar-link">参考文章</a><ul class="sidebar-sub-headers"></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="ldap操作"><a href="#ldap操作" class="header-anchor">#</a> ldap操作</h2> <p><a href="http://mirrors.gigenet.com/apache/directory/studio/2.0.0.v20180908-M14/ApacheDirectoryStudio-2.0.0.v20180908-M14-win32.win32.x86_64.exe" title="ApacheDirectoryStudio" target="_blank" rel="noopener noreferrer">ApacheDirectoryStudio<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="ldap常用属性"><a href="#ldap常用属性" class="header-anchor">#</a> LDAP常用属性</h2> <div class="language- extra-class"><pre class="language-text"><code>DN：Distinguished Name，可以叫做条目区分名。在一个目录中这个名称总是唯一的，也是用来标识一个节点的主要方式。它有若干属性：   
+1、CN=CommonName 为用户名或服务器名，最长可以到80个字符，可以为中文； 
+2、OU=OrganizationUnit为组织单元，最多可以有四级，每级最长32个字符，可以为中文； 
+3、DC= DomainComponent 为目录结构 
+4、O=Organization为组织名，可选，可以3—64个字符长 
+5、C=Country为国家名，可选，为2个字符长 
+</code></pre></div><table><thead><tr><th>对象类</th> <th>必要属性(Required)</th> <th>可选属性（Optional）</th> <th></th> <th></th></tr></thead> <tbody><tr><td>top</td> <td>objectClass</td> <td>无</td> <td></td> <td></td></tr> <tr><td>person</td> <td>cn</td> <td>description</td> <td>seeAlso</td> <td>telephoneNumber</td></tr> <tr><td>sn</td> <td>userPassword</td> <td></td> <td></td> <td></td></tr> <tr><td>organizationalPerson</td> <td>无</td> <td>destinationIndicator</td> <td>facsimileTelephoneNumber</td> <td>internationalISDNNumber</td></tr> <tr><td>1</td> <td>ou</td> <td>physicalDeliveryOfficeName</td> <td></td> <td></td></tr> <tr><td>postalAddress</td> <td>postalCode</td> <td>postOfficeBox</td> <td></td> <td></td></tr> <tr><td>preferredDeliveryMethod</td> <td>registeredAddress</td> <td>st</td> <td></td> <td></td></tr> <tr><td>street</td> <td>teletexTerminalIdentifier</td> <td>telexNumber</td> <td></td> <td></td></tr> <tr><td>title</td> <td>x121Address</td> <td></td> <td></td> <td></td></tr></tbody></table> <table><thead><tr><th>对象类</th> <th>必要属性(Required)</th> <th>可选属性（Optional）</th> <th></th> <th></th></tr></thead> <tbody><tr><td>inetOrgPerson</td> <td></td> <td>audio</td> <td>businessCategory</td> <td>carLicense</td></tr> <tr><td>departmentNumber</td> <td>displayName</td> <td>employNumber</td> <td></td> <td></td></tr> <tr><td>employeeType</td> <td>givenName</td> <td>homePhone</td> <td></td> <td></td></tr> <tr><td>homePostalAddress</td> <td>initals</td> <td>jpegPhoto</td> <td></td> <td></td></tr> <tr><td>labeledURL</td> <td>mail</td> <td>manager</td> <td></td> <td></td></tr> <tr><td>mobile</td> <td>o</td> <td>pager</td> <td></td> <td></td></tr> <tr><td>photo</td> <td>preferredLanguage</td> <td>roomNumber</td> <td></td> <td></td></tr> <tr><td>secretary</td> <td>uid</td> <td>userCertificate</td> <td></td> <td></td></tr> <tr><td>userOKCS12</td> <td>userSMIMECertificate</td> <td>x500UniqueIdentifier</td> <td></td> <td></td></tr></tbody></table> <p>slapd.conf修改配置文件</p> <div class="language- extra-class"><pre class="language-text"><code>database	mdb
+suffix		&quot;dc=siemens,dc=com&quot;
+rootdn		&quot;cn=Manager,dc=siemens,dc=com&quot;
+
+slappasswd -h {MD5} -s 123456  (&quot;mysecret&quot;是自定义的密码，可以随便设置)算出加密的密码 {MD5}4QrcOUm6Wau+VuBX8g+IPg== 替换配置中的 secret
+
+rootpw    {MD5}4QrcOUm6Wau+VuBX8g+IPg==
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>ldapsearch -x -h localhost -p 389 -b &quot;dc=siemens,dc=com&quot; -D &quot;uid=Miumiu,ou=Tester,dc=siemens,dc=com&quot; -w 111111
+</code></pre></div><p>ldapadd -c -x -D &quot;cn=manager,dc=siemens,dc=com&quot; -w 123456 -f ldapUsers.ldif</p> <blockquote><p>如果没有”ldapadd“这个命令，还可以用它自带的命令“slapadd”代替导入数据文件。不过要注意的是：和ldapadd命令不同的是：执行slapadd命令前需要先停止之前启动的 slapd 服务（打开服务确定停止了该服务），然后在控制台中切换到openLDAP安装目录下执行命令：</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>slapadd   -v -l  ./mydata/ldapuser.ldif
+5d887cc2 mdb_monitor_db_open: monitoring disabled; configure monitor database to enable
+added: &quot;dc=siemens,dc=com&quot; (00000003)
+added: &quot;ou=users,dc=siemens,dc=com&quot; (00000004)
+added: &quot;uid=admin123456,ou=users,dc=siemens,dc=com&quot; (00000005)
+_#################### 100.00% eta   none elapsed            none fast!
+Closing DB...
+
+ 
+
+ldapsearch -x -h 10.192.30.193  -b &quot;dc=siemens,dc=com&quot; &quot;(objectclass=*)&quot;
+
+ldapdelete -x -D &quot;uid=Miumiu,ou=Tester,dc=siemens,dc=com&quot; -w 111111 
+
+
+ldapdelete -x -h localhost  -D &quot;cn=Manager,dc=example,dc=org&quot; -w admin  &quot;uid=bjensenuid,ou=People,dc=example,dc=org&quot;
+ 
+
+</code></pre></div><div class="language-pr extra-class"><pre class="language-text"><code>配置文件导入
+
+dn: dc=siemens,dc=com
+objectClass: top
+objectClass: domain
+dc: siemens
+
+dn: ou=users,dc=siemens,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: users
+
+dn: uid=admin123456,ou=users,dc=siemens,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: superAdmin
+sn: admin
+uid: admin123456
+userPassword: admin123456
+</code></pre></div><h2 id="java联调"><a href="#java联调" class="header-anchor">#</a> java联调</h2> <p>schema加入</p> <p>include  ./schema/java.schema</p> <p>异常信息</p> <div class="language- extra-class"><pre class="language-text"><code>javax.naming.AuthenticationException: [LDAP: error code 49 - Invalid Credentials]  --用户名或者密码错误
+
+javax.naming.NoPermissionException: [LDAP: error code 50 - no write access to parent]
+</code></pre></div><p><strong>LDAP常见错误码</strong></p> <p>LDAP_SUCCESS = 0 //成功</p> <p>LDAP_OPERATIONS_ERROR = 1 //操作错误</p> <p>LDAP_PROTOCOL_ERROR = 2 //协议错误</p> <p>LDAP_TIME_LIMIT_EXCEEDED = 3 //超过最大时间限制</p> <p>LDAP_SIZE_LIMIT_EXCEEDED = 4 //超过最大返回条目数</p> <p>LDAP_COMPARE_FALSE = 5 //比较不匹配</p> <p>LDAP_COMPARE_TRUE = 6 //比较匹配</p> <p>LDAP_AUTH_METHOD_NOT_SUPPORTED = 7 //认证方法未被支持</p> <p>LDAP_STRONG_AUTH_REQUIRED = 8 //需要强认证</p> <p>LDAP_PARTIAL_RESULTS = 9 //null</p> <p>LDAP_REFERRAL = 10 //Referral</p> <p>LDAP_ADMIN_LIMIT_EXCEEDED = 11 //超出管理员权限</p> <p>LDAP_UNAVAILABLE_CRITICAL_EXTENSION = 12 //Critical扩展无效</p> <p>LDAP_CONFIDENTIALITY_REQUIRED = 13 //需要Confidentiality</p> <p>LDAP_SASL_BIND_IN_PROGRESS = 14 //需要SASL绑定</p> <p>LDAP_NO_SUCH_ATTRIBUTE = 16 //未找到该属性</p> <p>LDAP_UNDEFINED_ATTRIBUTE_TYPE = 17 //未定义的属性类型</p> <p>LDAP_INAPPROPRIATE_MATCHING = 18 //不适当的匹配</p> <p>LDAP_CONSTRAINT_VIOLATION = 19 //约束冲突</p> <p>LDAP_ATTRIBUTE_OR_value_EXISTS = 20 //属性或值已存在</p> <p>LDAP_INVALID_ATTRIBUTE_SYNTAX = 21 //无效的属性语法</p> <p>LDAP_NO_SUCH_OBJECT = 32 //未找到该对象</p> <p>LDAP_ALIAS_PROBLEM = 33 //别名有问题</p> <p>LDAP_INVALID_DN_SYNTAX = 34 //无效的DN语法</p> <p>LDAP_IS_LEAF = 35 //null</p> <p>LDAP_ALIAS_DEREFERENCING_PROBLEM = 36 //Dereference别名有问题</p> <p>LDAP_INAPPROPRIATE_AUTHENTICATION = 48 //不适当的认证</p> <p>LDAP_INVALID_CREDENTIALS = 49 //无效的Credential</p> <p>LDAP_INSUFFICIENT_ACCESS_RIGHTS = 50 //访问权限不够</p> <p>LDAP_BUSY = 51 //遇忙</p> <p>LDAP_UNAVAILABLE = 52 //无效</p> <p>LDAP_UNWILLING_TO_PERform = 53 //意外问题</p> <p>LDAP_LOOP_DETECT = 54 //发现死循环</p> <p>LDAP_NAMING_VIOLATION = 64 //命名冲突</p> <p>LDAP_OBJECT_CLASS_VIOLATION = 65 //对象类冲突</p> <p>LDAP_NOT_ALLOWED_ON_NON_LEAF = 66 //不允许在非叶结点执行此操作</p> <p>LDAP_NOT_ALLOWED_ON_RDN = 67 //不允许对RDN执行此操作</p> <p>LDAP_ENTRY_ALREADY_EXISTS = 68 //Entry已存在</p> <p>LDAP_OBJECT_CLASS_MODS_PROHIBITED = 69 //禁止更改对象类</p> <p>LDAP_AFFECTS_MULTIPLE_DSAS = 71 //null</p> <p>LDAP_OTHER = 80 //其它</p> <p><strong>3.访问控制</strong></p> <div class="language- extra-class"><pre class="language-text"><code># Sample Access Control
+#       Allow read access of root DSE
+# Allow self write access
+#       Allow authenticated users read access
+#       Allow anonymous users to authenticate
+# access to dn=&quot;&quot; by * read
+  access to * by self write
+              by users read
+              by anonymous auth
+#
+# if no access controls are present, the default is:
+#       Allow read by all
+#
+# rootdn can always write!
+</code></pre></div><p>此选项涉及如何管理服务器上的 LDAP 目录的访问权限。只要在数据库特定部分没有声明任何自定义访问规则，<code>slapd.conf</code> 的全局部分中的设置将始终有效。这些自定义声明会重写全局声明。如本例所示，所有用户都可以读取目录，但只有管理员 (<code>rootdn</code>) 才能写入此目录。LDAP 中的访问控制管理是一个非常复杂的过程。以下提示会有所帮助：</p> <ul><li><p>每条访问规则都具有如下结构：</p> <div class="language-ldif extra-class"><pre class="language-text"><code>access to &lt;what&gt; by &lt;who&gt; &lt;access&gt;
+</code></pre></div><h2 id="目录授权"><a href="#目录授权" class="header-anchor">#</a> 目录授权</h2></li></ul> <p>线上ACL控制配置解析
+为了用户能够自主修改密码，部署了lam给用户使用（见下文lam介绍）。希望能达到的效果是：
+管理员能够有全部权限，包含新建用户，修改用户属性，充值用户密码等
+普通用户只能修改自己的密码，别的权限都没有
+配置如下：</p> <div class="language- extra-class"><pre class="language-text"><code># access to attrs=userPassword通过属性找到访问范围密码,
+# 超级管理员也就是我们ldap配置文件里写的rootdn：&quot;cn=admin,dc=163,dc=com&quot;有写(write)权限；
+# 由于管理员可能不止一个，我创建了个管理员组&quot;ou=Admin,dc=163,dc=com&quot;把管理员统一都放到这个组下，管理员组下的所有用户（dn.children）有写权限；
+# 匿名用户(anonymous)要通过验证(auth);
+# 自己(self)有对自己密码的写（write）权限，其他人(*)都没有权限(none).```
+access to attrs=userPassword,shadowLastChange
+        by dn=&quot;cn=admin,dc=163,dc=com&quot; write
+        by dn.children=&quot;ou=Admin,dc=163,dc=com&quot; write
+        by anonymous auth
+        by self write
+        by * none
+
+``` # access to * 所有其他属性，
+# 超级管理员rootdn：&quot;cn=admin,dc=163,dc=com&quot;有写(write)权限；
+# 管理员&quot;ou=Admin,dc=163,dc=com&quot;成员有写(write)权限；
+# 其他人(*)只有读(read)权限 
+</code></pre></div><p>access to *
+by dn=&quot;cn=admin,dc=163,dc=com&quot; write
+by dn.children=&quot;ou=Admin,dc=163,dc=com&quot; write
+by * read</p> <h2 id="参考文章"><a href="#参考文章" class="header-anchor">#</a> 参考文章</h2> <p><a href="https://www.ibm.com/developerworks/cn/linux/l-openldap/#listing18" target="_blank" rel="noopener noreferrer">使用 OpenLDAP 集中管理用户帐号<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>Vssue title='测试' /&gt;</p></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">10/2/2019, 9:24:59 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.fbf1b08b.js" defer></script><script src="/assets/js/8.6b440de9.js" defer></script><script src="/assets/js/34.04b2e52e.js" defer></script>
+  </body>
+</html>

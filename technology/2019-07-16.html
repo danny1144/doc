@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>fluentd | 其实，我是一名程序员</title>
+    <meta name="description" content="">
+    <link rel="icon" href="/img/logo.jpeg">
+    
+    <link rel="preload" href="/assets/css/0.styles.ec5334b5.css" as="style"><link rel="preload" href="/assets/js/app.fbf1b08b.js" as="script"><link rel="preload" href="/assets/js/8.6b440de9.js" as="script"><link rel="preload" href="/assets/js/27.164921bf.js" as="script"><link rel="prefetch" href="/assets/js/10.89f811b8.js"><link rel="prefetch" href="/assets/js/11.0e190245.js"><link rel="prefetch" href="/assets/js/12.13a8ea5f.js"><link rel="prefetch" href="/assets/js/13.8f8f40c0.js"><link rel="prefetch" href="/assets/js/14.e75033fb.js"><link rel="prefetch" href="/assets/js/15.205f722e.js"><link rel="prefetch" href="/assets/js/16.66673bf2.js"><link rel="prefetch" href="/assets/js/17.5435c650.js"><link rel="prefetch" href="/assets/js/18.71b2c1fb.js"><link rel="prefetch" href="/assets/js/19.5f8b3901.js"><link rel="prefetch" href="/assets/js/2.63f3f567.js"><link rel="prefetch" href="/assets/js/20.bb4d6477.js"><link rel="prefetch" href="/assets/js/21.d59072e9.js"><link rel="prefetch" href="/assets/js/22.4d0029c9.js"><link rel="prefetch" href="/assets/js/23.03a51856.js"><link rel="prefetch" href="/assets/js/24.351ac71c.js"><link rel="prefetch" href="/assets/js/25.fcd7cac4.js"><link rel="prefetch" href="/assets/js/26.b2613bc7.js"><link rel="prefetch" href="/assets/js/28.0251e2b8.js"><link rel="prefetch" href="/assets/js/29.da86b351.js"><link rel="prefetch" href="/assets/js/3.67263ba4.js"><link rel="prefetch" href="/assets/js/30.deb53385.js"><link rel="prefetch" href="/assets/js/31.60246431.js"><link rel="prefetch" href="/assets/js/32.88b0ca03.js"><link rel="prefetch" href="/assets/js/33.49d346dd.js"><link rel="prefetch" href="/assets/js/34.04b2e52e.js"><link rel="prefetch" href="/assets/js/35.a9c5bc55.js"><link rel="prefetch" href="/assets/js/36.7c2c67e1.js"><link rel="prefetch" href="/assets/js/37.ebb59915.js"><link rel="prefetch" href="/assets/js/38.8597b6ef.js"><link rel="prefetch" href="/assets/js/39.50923ae2.js"><link rel="prefetch" href="/assets/js/4.287bab32.js"><link rel="prefetch" href="/assets/js/40.483fa3c9.js"><link rel="prefetch" href="/assets/js/5.ce17c05f.js"><link rel="prefetch" href="/assets/js/6.6b7bba6e.js"><link rel="prefetch" href="/assets/js/7.02ebcd87.js"><link rel="prefetch" href="/assets/js/9.da60ceff.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ec5334b5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.jpeg" alt="其实，我是一名程序员" class="logo"> <span class="site-name can-hide">其实，我是一名程序员</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/timeLine/" class="nav-link">首页</a></div><div class="nav-item"><a href="/technology/" class="nav-link router-link-active">技术</a></div><div class="nav-item"><a href="/life/" class="nav-link">生活</a></div><div class="nav-item"><a href="/ponder/" class="nav-link">思考</a></div><div class="nav-item"><a href="/tags/" class="nav-link">标签库</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/massage/" class="nav-link">留言板</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">链接</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/a053df515092" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/danny1144" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/zxp110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav> <div style="margin-left:20px;margin-right:20px;">
+   音乐
+  <div role="switch" class="el-switch"><input type="checkbox" name="" true-value="true" class="el-switch__input"><!----><span class="el-switch__core" style="width:40px;"></span><!----></div> <audio loop="loop"><source src="/assets/media/buyizuishiliangbuyi.82f2a68a.mp3" type="audio/mpeg"></audio></div></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/timeLine/" class="nav-link">首页</a></div><div class="nav-item"><a href="/technology/" class="nav-link router-link-active">技术</a></div><div class="nav-item"><a href="/life/" class="nav-link">生活</a></div><div class="nav-item"><a href="/ponder/" class="nav-link">思考</a></div><div class="nav-item"><a href="/tags/" class="nav-link">标签库</a></div><div class="nav-item"><a href="/about/" class="nav-link">关于</a></div><div class="nav-item"><a href="/massage/" class="nav-link">留言板</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">链接</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://www.jianshu.com/u/a053df515092" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  简书
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://github.com/danny1144" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/zxp110" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>fluentd</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/technology/2019-07-16.html#fluentd" class="sidebar-link">fluentd</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/technology/2019-07-16.html#add-gpg-key" class="sidebar-link">add GPG key</a></li><li class="sidebar-sub-header"><a href="/technology/2019-07-16.html#add-treasure-data-repository-to-yum" class="sidebar-link">add treasure data repository to yum</a></li><li class="sidebar-sub-header"><a href="/technology/2019-07-16.html#update-your-sources" class="sidebar-link">update your sources</a></li><li class="sidebar-sub-header"><a href="/technology/2019-07-16.html#启动服务" class="sidebar-link">启动服务</a></li><li class="sidebar-sub-header"><a href="/technology/2019-07-16.html#名词解释" class="sidebar-link">名词解释</a></li><li class="sidebar-sub-header"><a href="/technology/2019-07-16.html#举个栗子" class="sidebar-link">举个栗子</a></li><li class="sidebar-sub-header"><a href="/technology/2019-07-16.html#创建完成如图所示：" class="sidebar-link">创建完成如图所示：</a></li><li class="sidebar-sub-header"><a href="/technology/2019-07-16.html#查看fluentd索引中的数据" class="sidebar-link">查看fluentd索引中的数据</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h2 id="fluentd"><a href="#fluentd" class="header-anchor">#</a> fluentd</h2> <p>官网提供了一个直接安装的脚本，使用如下命令即可完成安装，首先要保证自己的网络通畅：</p> <div class="language-shell extra-class"><pre class="language-text"><code>curl -L https://toolbelt.treasuredata.com/sh/install-redhat-td-agent3.sh | sh
+echo &quot;==============================&quot;
+echo &quot; td-agent Installation Script &quot;
+echo &quot;==============================&quot;
+echo &quot;This script requires superuser access to install rpm packages.&quot;
+echo &quot;You will be prompted for your password by sudo.&quot;
+
+# clear any previous sudo permission
+sudo -k
+
+# run inside sudo
+sudo sh &lt;&lt;SCRIPT
+
+  # add GPG key
+  rpm --import https://packages.treasuredata.com/GPG-KEY-td-agent
+
+  # add treasure data repository to yum
+  cat &gt;/etc/yum.repos.d/td.repo &lt;&lt;'EOF';
+[treasuredata]
+name=TreasureData
+baseurl=http://packages.treasuredata.com/3/redhat/\$releasever/\$basearch
+gpgcheck=1
+gpgkey=https://packages.treasuredata.com/GPG-KEY-td-agent
+EOF
+
+  # update your sources
+  yum check-update
+
+  # install the toolbelt
+  yes | yum install -y td-agent
+
+SCRIPT
+
+# message
+echo &quot;&quot;
+echo &quot;Installation completed. Happy Logging!&quot;
+echo &quot;&quot;
+</code></pre></div><p>从这个脚本可以看出：添加了一下yum源，使用yum直接安装，比较简单。
+离线安装
+大多数产品化时，基本上是使用离线安装的，我们下载rpm包进行安装。
+下载所有rpm包
+找一台网络通畅的CentOS机器，首先添加yum源</p> <h3 id="add-gpg-key"><a href="#add-gpg-key" class="header-anchor">#</a> add GPG key</h3> <p>rpm --import https://packages.treasuredata.com/GPG-KEY-td-agent</p> <h3 id="add-treasure-data-repository-to-yum"><a href="#add-treasure-data-repository-to-yum" class="header-anchor">#</a> add treasure data repository to yum</h3> <p>cat &gt;/etc/yum.repos.d/td.repo &lt;&lt;'EOF';
+[treasuredata]
+name=TreasureData
+baseurl=http://packages.treasuredata.com/3/redhat/$releasever/$basearch
+gpgcheck=1
+gpgkey=https://packages.treasuredata.com/GPG-KEY-td-agent
+EOF</p> <h3 id="update-your-sources"><a href="#update-your-sources" class="header-anchor">#</a> update your sources</h3> <div class="language- extra-class"><pre class="language-text"><code>yum check-update
+
+使用下面命令下载所有rpm包
+mkdir /home/fluentd_rpms
+yum -y install td-agent --downloadonly --downloaddir=/home/fluentd_rpms
+有了rpm包，找到依赖顺序，使用rpm -ivh *.rpm进行安装
+</code></pre></div><h3 id="启动服务"><a href="#启动服务" class="header-anchor">#</a> 启动服务</h3> <div class="language- extra-class"><pre class="language-text"><code>查看是否安装：rpm -qa|grep td-agent
+使用命令启动：systemctl start td-agent
+默认配置文件路径：/etc/td-agent/td-agent.conf
+默认日志文件路径：/var/log/td-agent/td-agent.log
+可以从这个日志文件中查看td-agent服务运行日志/报错信息
+</code></pre></div><h3 id="名词解释"><a href="#名词解释" class="header-anchor">#</a> 名词解释</h3> <div class="language- extra-class"><pre class="language-text"><code>source：指定数据源
+match：指定输出地址
+filter：指定了一个事件处理过程
+system：用来设置系统的配置
+label：为output和filter分组
+@include：使用它可以在配置文件里面包含其他的配置文件
+插件：fluentd采集发送日志时要使用插件，一些插件是内置的，要使用非内置的插件需
+docker run -dit -p 8080:80 -v ./nginx.conf:/etc/nginx --log-driver=fluentd --log-opt fluentd-address=10.192.30.192:24224 --log-opt tag=&quot;docker.test.nginx&quot; nginx
+</code></pre></div><h3 id="举个栗子"><a href="#举个栗子" class="header-anchor">#</a> 举个栗子</h3> <p>fluentd/source：source可定义日志来源。每一个来源配置必须包含类型（type），比如tcp数据输入，或者json类型输入。</p> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span><span class="token punctuation">&gt;</span></span>
+  @type forward
+  port 5140
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>source</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span><span class="token punctuation">&gt;</span></span>
+   @type beats
+   metadata_as_tag
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parse</span><span class="token punctuation">&gt;</span></span>
+      @type json
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parse</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>source</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>fluentd/filter：filter就是过滤规则，当source.tag复合filter的规则时，就执行这个filter进行过滤行为。我们将数据格式化为json，并过滤出key的名字为log的数据。</p> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>filter</span> <span class="token attr-name">nginx.**</span><span class="token punctuation">&gt;</span></span>
+  @type parser
+  format json
+  key_name log
+  reserve_data true
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>filter</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre></div><p>fluentd/match：match是fluentd收到数据后的处理， @type elasticsearch表示把数据输入到elasticsearch上面。</p> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>match</span> <span class="token attr-name">nginx.backend</span><span class="token punctuation">&gt;</span></span>
+   @type elasticsearch
+   host elasticsearch
+   port 9200
+   logstash_format true
+   logstash_prefix nginx
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>match</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>match</span> <span class="token attr-name">docker.**</span><span class="token punctuation">&gt;</span></span>
+   @type elasticsearch
+   host elasticsearch
+   port 9200
+   logstash_format true
+   logstash_prefix app
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>match</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="创建完成如图所示："><a href="#创建完成如图所示：" class="header-anchor">#</a> 创建完成如图所示：</h3> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span><span class="token punctuation">&gt;</span></span>
+   @type http
+   port 8888
+   bind 0.0.0.0
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>source</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>match</span> <span class="token attr-name">td3.**</span><span class="token punctuation">&gt;</span></span>
+   type stdout
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>match</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><blockquote><p>curl http://10.192.30.192:8888/td3 -d 'json={&quot;hi&quot;:&quot;abc&quot;}'</p></blockquote> <blockquote><p>curl '10.192.30.192:9200/_cat/indices?v'</p></blockquote> <h3 id="查看fluentd索引中的数据"><a href="#查看fluentd索引中的数据" class="header-anchor">#</a> 查看fluentd索引中的数据</h3> <p>curl -XGET '10.192.30.192:9200/fluentd/_search?pretty'</p> <p>curl -X POST -d 'json={&quot;foo&quot;:&quot;bar&quot;}' http://localhost:8081/app.log</p></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">9/4/2019, 3:00:24 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.fbf1b08b.js" defer></script><script src="/assets/js/8.6b440de9.js" defer></script><script src="/assets/js/27.164921bf.js" defer></script>
+  </body>
+</html>
